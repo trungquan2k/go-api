@@ -1,0 +1,15 @@
+services:
+  fiber_gorm:
+    build:
+      context: .
+    volumes:
+      - ./:/app
+    tty: true
+    ports:
+      - 9091:9091
+    networks:
+      - golang_basic_training
+
+networks:
+  golang_basic_training:
+    driver: bridge
