@@ -93,10 +93,9 @@ func(u UserApi) SignIn() fiber.Handler {
 		if payload.Password == "" {
 			return c.Status(fiber.StatusUnauthorized).JSON(fiber.Map{"message": "Invalid password"})
 		}
-
 		response := fiber.Map{
 			"status":  fiber.StatusOK,
-			"data":    nil, // Omit user data for security reasons
+			"data":    payload, // Omit user data for security reasons
 			"message": "Login successful",
 			"token":   token,
 		}
@@ -180,7 +179,7 @@ func (u UserApi) UpdateUser() fiber.Handler {
 			return c.JSON(&fiber.Map{"status": http.StatusInternalServerError, "error": err.Error()})
 		}
 		user := &models.User{
-			UserName: payload.PhoneNumber,
+			PhoneNumber: payload.PhoneNumber,
 			Password: payload.Password,
 		}
 		// Return a success message

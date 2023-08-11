@@ -14,6 +14,6 @@ func SetupRoutes(server *Server) {
 	user.Get("/:id", userApi.GetUserDetail())
 	user.Put("/:id", userApi.UpdateUser())
 	user.Post("/create-user", userApi.SignUp())
-	user.Post("/sign-in", userApi.SignIn())
+	user.Post("/signin", userApi.SignIn())
 	user.Delete("/:id", userApi.DeleteOneUser())
 }

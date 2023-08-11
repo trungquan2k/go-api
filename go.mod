@@ -10,6 +10,8 @@ require (
 	gorm.io/gorm v1.25.2
 )
 
+require github.com/githubnemo/CompileDaemon v1.4.0 // indirect
+
 require (
 	github.com/andybalholm/brotli v1.0.5 // indirect
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
