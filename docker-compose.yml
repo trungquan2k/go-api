@@ -6,7 +6,7 @@ services:
       - ./:/app
     tty: true
     ports:
-      - 9091:9091
+      - 9093:9093
     networks:
       - golang_basic_training
 
