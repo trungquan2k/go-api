@@ -1,0 +1,5 @@
+{
+  "router":[
+    {"src": "./app/server/route.go"}
+  ]
+}
