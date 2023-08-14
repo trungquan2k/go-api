@@ -9,7 +9,22 @@ services:
       - 9093:9093
     networks:
       - golang_basic_training
-
+    depends_on:
+      - db
+    env_file:
+      - .env    
+  db:
+    image: postgres:14
+    command: ["postgres", "-c", "log_statement=all"]
+    ports:
+      - "5436:5432"
+    volumes:
+      - ./docker/container_data/pgdata:/var/lib/postgresql/data
+    env_file:
+      - .env
+    networks:
+      - golang_basic_training
+  
 networks:
   golang_basic_training:
     driver: bridge
