@@ -1,5 +1,5 @@
 {
   "router":[
-    {"src": "./app/server/route.go"}
+    {"src": "./app/server/route.go", "dest":"/api/v1"}
   ]
 }
